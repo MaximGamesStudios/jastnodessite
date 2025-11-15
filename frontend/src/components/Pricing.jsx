@@ -6,11 +6,9 @@ import { Badge } from './ui/badge';
 import { pricingPlans } from '../mockData';
 
 const Pricing = () => {
-  const [selectedLocation, setSelectedLocation] = useState('all');
+  const [selectedLocation, setSelectedLocation] = useState('РФ');
 
-  const filteredPlans = selectedLocation === 'all' 
-    ? pricingPlans 
-    : pricingPlans.filter(plan => plan.location === selectedLocation);
+  const filteredPlans = pricingPlans.filter(plan => plan.location === selectedLocation);
 
   return (
     <section id="pricing" className="pricing-section">
@@ -22,12 +20,6 @@ const Pricing = () => {
           </p>
           
           <div className="location-filter">
-            <Button 
-              className={selectedLocation === 'all' ? 'filter-btn-active' : 'filter-btn'}
-              onClick={() => setSelectedLocation('all')}
-            >
-              Все тарифы
-            </Button>
             <Button 
               className={selectedLocation === 'РФ' ? 'filter-btn-active' : 'filter-btn'}
               onClick={() => setSelectedLocation('РФ')}
