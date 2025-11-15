@@ -8,8 +8,7 @@ export const pricingPlans = [
     price: 39,
     currency: '₽',
     period: '/Месяц',
-    popular: false,
-    location: 'РФ'
+    popular: false
   },
   {
     id: 2,
@@ -20,8 +19,7 @@ export const pricingPlans = [
     price: 59,
     currency: '₽',
     period: '/Месяц',
-    popular: false,
-    location: 'РФ'
+    popular: false
   },
   {
     id: 3,
@@ -32,8 +30,7 @@ export const pricingPlans = [
     price: 99,
     currency: '₽',
     period: '/Месяц',
-    popular: false,
-    location: 'РФ'
+    popular: false
   },
   {
     id: 4,
@@ -44,8 +41,7 @@ export const pricingPlans = [
     price: 139,
     currency: '₽',
     period: '/Месяц',
-    popular: true,
-    location: 'РФ'
+    popular: true
   },
   {
     id: 5,
@@ -56,8 +52,7 @@ export const pricingPlans = [
     price: 189,
     currency: '₽',
     period: '/Месяц',
-    popular: false,
-    location: 'РФ'
+    popular: false
   },
   {
     id: 6,
@@ -68,8 +63,7 @@ export const pricingPlans = [
     price: 299,
     currency: '₽',
     period: '/Месяц',
-    popular: true,
-    location: 'Германия'
+    popular: true
   },
   {
     id: 7,
@@ -80,8 +74,7 @@ export const pricingPlans = [
     price: 359,
     currency: '₽',
     period: '/Месяц',
-    popular: false,
-    location: 'Германия'
+    popular: false
   },
   {
     id: 8,
@@ -92,8 +85,7 @@ export const pricingPlans = [
     price: 499,
     currency: '₽',
     period: '/Месяц',
-    popular: false,
-    location: 'Германия'
+    popular: false
   }
 ];
 

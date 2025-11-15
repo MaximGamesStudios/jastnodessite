@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Check, Cpu, HardDrive, Database } from 'lucide-react';
+import { Cpu, HardDrive, Database } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
@@ -7,8 +7,6 @@ import { pricingPlans } from '../mockData';
 
 const Pricing = () => {
   const [selectedLocation, setSelectedLocation] = useState('РФ');
-
-  const filteredPlans = pricingPlans.filter(plan => plan.location === selectedLocation);
 
   return (
     <section id="pricing" className="pricing-section">
@@ -24,19 +22,21 @@ const Pricing = () => {
               className={selectedLocation === 'РФ' ? 'filter-btn-active' : 'filter-btn'}
               onClick={() => setSelectedLocation('РФ')}
             >
+              <span className="flag-icon">🇷🇺</span>
               Россия
             </Button>
             <Button 
               className={selectedLocation === 'Германия' ? 'filter-btn-active' : 'filter-btn'}
               onClick={() => setSelectedLocation('Германия')}
             >
+              <span className="flag-icon">🇩🇪</span>
               Германия
             </Button>
           </div>
         </div>
 
         <div className="pricing-grid">
-          {filteredPlans.map((plan) => (
+          {pricingPlans.map((plan) => (
             <Card key={plan.id} className={plan.popular ? 'pricing-card pricing-card-popular' : 'pricing-card'}>
               {plan.popular && (
                 <Badge className="popular-badge">Популярный</Badge>
@@ -46,7 +46,7 @@ const Pricing = () => {
                 <CardTitle className="plan-name">{plan.name}</CardTitle>
                 <CardDescription className="plan-location">
                   <Database className="location-icon" />
-                  {plan.location}
+                  {selectedLocation}
                 </CardDescription>
               </CardHeader>
               
@@ -68,18 +68,6 @@ const Pricing = () => {
                   <div className="feature-item">
                     <HardDrive className="feature-icon" />
                     <span>{plan.storage} SSD</span>
-                  </div>
-                  <div className="feature-item">
-                    <Check className="feature-icon" />
-                    <span>DDoS защита</span>
-                  </div>
-                  <div className="feature-item">
-                    <Check className="feature-icon" />
-                    <span>Панель управления</span>
-                  </div>
-                  <div className="feature-item">
-                    <Check className="feature-icon" />
-                    <span>24/7 Поддержка</span>
                   </div>
                 </div>
               </CardContent>
